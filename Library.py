@@ -22,12 +22,11 @@ class Library_Management:
         self.listofbooks.append(donate_books)
         print(self.listofbooks)
     def return_books(self,bookname):
-        for books in self.dictbooks.keys():
-            if(bookname==books):
-                self.dictbooks.pop(bookname)
-                print(self.dictbooks)
-            else:
-                print("Book has not been issued yet")
+        if bookname in self.dictbooks.keys():
+            self.dictbooks.pop(bookname)
+            print(self.dictbooks)
+        else:
+            print("Book has not been issued yet")
     def display_all_books(self, listofbooks):
          print(self.listofbooks)
 if __name__=='__main__':
